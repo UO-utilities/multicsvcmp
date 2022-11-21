@@ -43,14 +43,14 @@ int main(int argc, const char * argv[]) {
                 }
             }
             if (!missing.empty()){
-                std::cout <<"Items in " <<mulpath.string()<<" not found in " <<uoppath.string()<<":\n";
+                std::cout <<"Items in " <<mulpath.string()<<" not found in " <<uoppath.string()<<": " << missing.size()<<"\n";
                 for (auto const &id:missing){
                     std::cout <<"\t"<<id<<"\n";
                 }
                 std::cout <<std::endl;
             }
             if (!diff.empty()){
-                std::cout <<"Items in " <<mulpath.string()<<" dffer from in " <<uoppath.string()<<":\n";
+                std::cout <<"Items in " <<mulpath.string()<<" dffer from in " <<uoppath.string()<<": "<<diff.size()<<"\n";
                 for (auto const &id:diff){
                     std::cout <<"\t"<<id<<"\n";
                 }
