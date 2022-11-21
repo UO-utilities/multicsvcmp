@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64E005D9292BA63000BEBA8F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E005D8292BA63000BEBA8F /* main.cpp */; };
+		64E005E3292BA6A100BEBA8F /* multi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E005E0292BA6A100BEBA8F /* multi.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		64E005D5292BA63000BEBA8F /* multicsvcmp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = multicsvcmp; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E005D8292BA63000BEBA8F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		64E005E0292BA6A100BEBA8F /* multi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = multi.cpp; sourceTree = "<group>"; };
+		64E005E1292BA6A100BEBA8F /* strutil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = strutil.hpp; sourceTree = "<group>"; };
+		64E005E2292BA6A100BEBA8F /* multi.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = multi.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +45,7 @@
 		64E005CC292BA63000BEBA8F = {
 			isa = PBXGroup;
 			children = (
-				64E005D7292BA63000BEBA8F /* multicsvcmp */,
+				64E005D7292BA63000BEBA8F /* source */,
 				64E005D6292BA63000BEBA8F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +58,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		64E005D7292BA63000BEBA8F /* multicsvcmp */ = {
+		64E005D7292BA63000BEBA8F /* source */ = {
 			isa = PBXGroup;
 			children = (
+				64E005DF292BA67300BEBA8F /* support */,
 				64E005D8292BA63000BEBA8F /* main.cpp */,
 			);
-			path = multicsvcmp;
+			path = source;
+			sourceTree = "<group>";
+		};
+		64E005DF292BA67300BEBA8F /* support */ = {
+			isa = PBXGroup;
+			children = (
+				64E005E0292BA6A100BEBA8F /* multi.cpp */,
+				64E005E2292BA6A100BEBA8F /* multi.hpp */,
+				64E005E1292BA6A100BEBA8F /* strutil.hpp */,
+			);
+			path = support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +105,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1410;
+				ORGANIZATIONNAME = "Charles Kerr";
 				TargetAttributes = {
 					64E005D4292BA63000BEBA8F = {
 						CreatedOnToolsVersion = 14.1;
@@ -120,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64E005D9292BA63000BEBA8F /* main.cpp in Sources */,
+				64E005E3292BA6A100BEBA8F /* multi.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
