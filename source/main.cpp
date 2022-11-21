@@ -20,6 +20,7 @@ int main(int argc, const char * argv[]) {
         auto uoppath = std::filesystem::path() ;
         auto mulpath = std::filesystem::path() ;
         auto missing = std::vector<std::uint32_t>() ;
+        auto missing1 = std::vector<std::uint32_t>();
         auto diff = std::vector<std::uint32_t>() ;
         if (argc != 3 ) {
             std::cerr <<"Usage:\n" ;
@@ -42,20 +43,30 @@ int main(int argc, const char * argv[]) {
                     }
                 }
             }
-            if (!missing.empty()){
-                std::cout <<"Items in " <<mulpath.string()<<" not found in " <<uoppath.string()<<": " << missing.size()<<"\n";
+            for (const auto& [id, entry] : uopentries) {
+                  if (mulentries.find(id) == mulentries.end()) {
+                        missing1.push_back(id);
+                  }
+            }
+            std::cout <<"Items in " <<mulpath.string()<<" not found in " <<uoppath.string()<<": " << missing.size()<<"\n";
+            if (!missing.empty()) {
                 for (auto const &id:missing){
                     std::cout <<"\t"<<id<<"\n";
                 }
                 std::cout <<std::endl;
             }
-            if (!diff.empty()){
-                std::cout <<"Items in " <<mulpath.string()<<" dffer from in " <<uoppath.string()<<": "<<diff.size()<<"\n";
-                for (auto const &id:diff){
-                    std::cout <<"\t"<<id<<"\n";
-                }
-                std::cout <<std::endl;
+            std::cout << "Items in " << uoppath.string() << " not found in " << mulpath.string() << ": " << missing1.size() << "\n";
+            if (!missing1.empty()) {
+                  for (auto const& id : missing1) {
+                        std::cout << "\t" << id << "\n";
+                  }
+                  std::cout << std::endl;
             }
+            std::cout << "Items in " << mulpath.string() << " dffer from in " << uoppath.string() << ": " << diff.size() << "\n";
+            for (auto const &id:diff){
+                std::cout <<"\t"<<id<<"\n";
+            }
+            std::cout <<std::endl;
         }
     }
     catch(const std::exception &e){
